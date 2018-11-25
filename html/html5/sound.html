@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf=8"/>
+
+    </head>
+
+    <body>
+        <p>使用embed标记 播放音乐<br>
+            <embed height="50" width="100" src="http://www.runoob.com/try/demo_source/horse.mp3">
+        </p>
+
+        <p> 使用object 播放音乐  <br>
+        <object height="50" width="100" data="http://www.runoob.com/try/demo_source/horse.mp3">
+        </object>
+
+        </p>
+
+        <p>使用 HTML5 audio 元素 <br>
+        <audio controls="controls">
+            <source src="http://www.runoob.com/try/demo_source/horse.mp3" type="audio/mpeg">
+            <source src="http://www.runoob.com/try/demo_source/horse.mp3" type="audio/ogg">
+            Your browser does not support this audio format.
+         </audio>
+        </p>
+
+        <p> 最优的解决方案：<br>
+        <audio controls height = "100" width="100"> 
+            <source src="http://www.runoob.com/try/demo_source/horse.mp3" type="audio/mpeg">
+            <source src="http://www.runoob.com/try/demo_source/horse.mp3" type="audio/ogg">
+            <embed height="50" width="50" src="http://www.runoob.com/try/demo_source/horse.mp3">
+            <object height="50" width="50" data="http://www.runoob.com/try/demo_source/horse.mp3"></object>
+            您的浏览器不支持此音频文件
+        </audio>
+        </p>
+
+        <p>
+                使用超链接 <br>
+                如果网页包含指向媒体文件的超链接，大多数浏览器会使用"辅助应用程序"来播放文件。<br>
+                以下代码片段显示指向 mp3 文件的链接。如果用户点击该链接，浏览器会启动"辅助应用程序"来播放该文件：
+                <br>
+
+                <a href="http://www.runoob.com/try/demo_source/horse.mp3" >播放马叫</a>
+        </p>
+    </body>
+</html>

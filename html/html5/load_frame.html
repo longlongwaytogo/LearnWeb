@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title> test frame load</title>
+    </head>
+
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<!--<script src="module/query-3.3.1.min.js">-->
+
+<script>
+//div+$(“#page1”).load(“b.html”) 
+$("#sound").load("sound.html");
+
+
+    $(document).ready(function(){
+            $("#btn").click(function(){
+               // alert(1);
+              $('#viewDiv').load('sound.html');
+              //$('#viewDiv').load('https://www.baidu.com/');
+            });
+        });
+
+    $(document).ready(function(){
+        $("p").click(function(){
+         $(this).hide();
+        });
+    });
+
+    </script>
+
+    <body>
+        <div id="sound"></div>
+        
+       <div>
+        <button type="button" id="btn">确认</button>
+        </div>
+        <div id="viewDiv">
+        </div>
+        <div>
+            <p>如果你点我，我就会消失。</p>
+            <p>继续点我!</p>
+            <p>接着点我!</p>
+        </div>
+
+
+        <div class="main-container" id="main" style="width:99%">
+            <iframe src="https://www.baidu.com" width="100%" height="100%" frameborder="0">
+            您的浏览器不支持iframe，请升级
+            </iframe>
+           </div>
+          
+    </body>
+</html>

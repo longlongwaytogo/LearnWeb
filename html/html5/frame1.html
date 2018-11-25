@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title> div style </title>
+        <meta charset="utf-8">
+        <!-- use css style to change the property -->
+        <style type ="text/css">
+            div#test_div{
+                color:red;
+            }
+
+            span{
+                color: rgb(181, 58, 192);
+            }
+            div#global{
+                /*设置宽度，设置百分之百可根据浏览器自适应宽度*/
+                width:100%;
+                /*设置高度为950px 是设置实体高度，不能自适应*/
+                height:950px;
+                /* 设置北京颜色，方便区分布局*/
+                background-color:silver;
+            }
+
+            div#heading{
+                width:100%;
+                height:100px;
+                background-color:#BB80F7;
+            }
+            
+            #content_menu{
+                width:20%;
+                height:700px;
+                background-color:#c5E9F3;
+                /* 定义浮动，不定义的话，界面会乱*/
+                float:left;
+            }
+            #content_body{
+                width:80%;
+                height:700px;
+                background-color:#f7575d;
+                float: right;
+            }
+            #floor{
+                /*删除浮动，不然会被其他浮动给遮住*/
+
+                clear:both;
+                height:100px;
+                background-color:#8080FF;
+            }
+             <!-- 在这里控制全局的页面，定义div的id是"global" -->
+        </style>
+    </head>
+    <body>
+        <!-- 在这里控制全局的页面，定义div的id是"global" -->
+        
+
+            <div id="global">
+
+            <div id="heading">我是头部的布局</div>
+            <div id="content_menu">我是正文部分，我想去左边的菜单呆着</div>
+            <div id="content_body">我是正文部分</div>
+            <div id="floor">我在最下面，抢不到沙发，坐个地板可以吧</div>
+            </div>
+               
+    </body>
+</html>
