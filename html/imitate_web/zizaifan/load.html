@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="keywords" content="自在搜，谷歌，谷歌镜像，自在饭">
+        <meta name="description" content="自在饭出品，为广大电影爱好者，资源党，提供一站式搜索!">
+        <meta name="author" content="自在饭" >
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="app-mobile-web-app-status-bar-stype" content="black">
+        <meta name ="format-detection" content ="telephone=no">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel ="stylesheet">
+        <link href="css/my.css" rel="stylesheet">
+
+    </head>
+    <body>
+        <div class="container-fluid banner banbk">
+            <div class="banseo2">
+                <a href="http://www.zizaifan.com/" target="_blank" title = "点击查看更多电影资讯">
+                点击查看更多电影资讯</a>
+            </div>
+            <div class="banseo">
+                <div class="banjz">
+                    <a href="http://www.zizaifan.com/" target="_blank" title="自在饭资源搜索">自在饭</a>
+                </div>
+                <input type="text" class="bantxt" id="kw" placeholder="输入关键字.." onkeyup="autoComplete.start(event)">
+                <!--搜索按鈕-->
+                <button class="btn banbutt" type="button" id="seobut">
+                <i class="fa fa-chevron-circle-right"></i>搜索</button>
+                <span class="seoicn"><i class="fa fa-search"></i></span>
+            </div>
+
+             <input type="hidden" id="id" name="id"  value="45">
+             <div class="bjtx"> 关闭背景特效
+             </div>
+             <iframe class="baniframe" sandbox="allow-scripts allow-same-origin" id="mh" src="index.html"></iframe>
+        </div>
+
+        <script src="scripts/jquery-1.11.2.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    // 定义并执行函数
+        $(function () {
+            $("#seobut").click(function () { search() }); 
+			$("#kw").bind("keypress", function (a) { "13" == a.keyCode && search() });
+            if (localStorage.bgNy == 'undefined') {
+                $("#mh").attr("src", "index.html");
+            } else if (localStorage.bgNy == 'n') {
+                $("#mh").attr("src", "effect/0/index.html");
+                $(".bjtx").text("开启背景特效");
+            } else {
+                $("#mh").attr("src", "effect/6/index.html");
+                $(".bjtx").text("关闭背景特效");
+            }
+			// 按钮点击事件,开启或关闭特效
+            $(".bjtx").click(function () {
+                if (localStorage.bgNy == 'undefined') {
+                    localStorage.bgNy = 'n';
+                    $("#mh").attr("src", "effect/0/index.html");
+                    $(".bjtx").text("开启背景特效");
+                } else if (localStorage.bgNy == 'n') {
+                    localStorage.bgNy = 'y';
+                    $("#mh").attr("src", "effect/6/index.html");
+                    $(".bjtx").text("关闭背景特效");
+                } else {
+                    localStorage.bgNy = 'n';
+                    $("#mh").attr("src", "effect/0/index.html");
+                    $(".bjtx").text("开启背景特效");
+                }
+            });
+        });
+        function search() {
+            var keys = encodeURI($("#kw").val()), id = $("#id").val();
+            if (keys == "") {
+                $("#kw").focus();
+            } else {
+                window.open("http://www.zizaifan.com/seek_go.html?id=" + id + "&keys=" + keys, "_blank");
+            }
+        }
+    </script>
+
+    </body>
+</html>
