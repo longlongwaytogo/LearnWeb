@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "test webpack",
   "main": "dist/index.html",
-  "dependencies": {
-    "webpack": "^4.26.1",
-    "webpack-dev-server": "^3.1.10"
+  "dependencies": {},
+  "devDependencies": {
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "webpack-dev-server"
   },
   "author": "",
   "license": "ISC"
