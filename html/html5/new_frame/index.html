@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	
+    <link rel="stylesheet" href="css/comm.css" type="text/css" />
+    <script src="script/comm.js"></script>
+    </head>
+    <!-- <script >
+            window.onresize=function(){  
+                changeFrameHeight("showWindow",75);  
+            } 
+    </script> -->
+    <body>
+        <div id="Container"> container</div>
+        <div id="header">header</div>
+        <div id="main">
+                 <div style="width:100%;height:100%;">
+                        <iframe  src="http://www.baidu.com" id="showWindow" frameborder="1" height ="100%" width="100%"
+                        sandbox="allow-same-origin allow-scripts allow-top-navigation allow-modals " onload='changeFrameHeight("showWindow",75);'  ></iframe>
+                </div>
+            </div>
+        <div id="footer">footer</div>
+
+    </body>
+</html>
