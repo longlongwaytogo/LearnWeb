@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <tilte> test require module</tilte>
+    </head>
+    <script src ='./../lib/requirejs-2.1.20/require.min.js'> </script>
+    <script>
+        require(["./../lib/requirejs-2.1.20/domReady!","./01-a.js","./01-b.js"],function(){
+            myFunctionA();
+            myFunctionB();
+        })
+
+        require(['./01-student','./01-class'],function(student,clz) {
+            clz.addToClass(student.createStudent("jack","male"));
+            clz.addToClass(student.createStudent("Rose","female"));
+            console.log(clz.getClassSize());
+            var element = document.getElementById('c');
+            element.innerHTML += "<p> student:";
+                for(var n =0;n < clz.getClassSize(); n++)
+                {
+                        var student = clz.getStudent(n);
+                        if(student != undefined)
+                        {
+                            element.innerHTML += "<p>name:" + student.name;
+                            element.innerHTML += "<p> gender:" + student.gender;
+                        }
+                }
+        });
+        
+        require(['./01-manager'],function(manager){ 
+            manager.addNewStudent("jack1","male");
+            manger.addNewStudent("Rosse1","famale");
+            console.log(manger.getMyClassSize());
+        });
+      
+
+    </script>
+
+    <body>
+        <div id='a'></div>
+        <div id='b'></div>
+        <div id='c'></div>
+    </body>
+</html>

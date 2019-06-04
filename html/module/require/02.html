@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <tiltle> require test</tiltle>
+
+    </head>
+    <script type="text/javascript" src="./../lib/requirejs-2.1.20/require.min.js"></script>
+    <script type="text/javascript">
+        require.config({
+            baseUrl:"./01-js",
+            paths: {
+                "some": "some/v1"
+            },
+            waitSeconds: 10
+        });
+
+        require(["some/module","my/module","./01-a.js"],
+                function(someModule,myModule) {
+                    console.log(someModule.info());
+                    console.log(myModule.info());
+                    var element =document.getElementById('body');
+                    element.innerHTML = someModule.info();
+                    element.innerHTML  += "<p>";
+                    element.innerHTML += myModule.info();
+                });
+
+                var a = 0;
+                a++;
+                if(a)
+                {
+                    console.log("a is 1:");
+                }
+    </script>
+    <body id='body'>
+
+    </body>
+</html>
